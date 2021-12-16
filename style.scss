@@ -1,0 +1,529 @@
+@import "partials/variables";
+@import "partials/mixins";
+
+// skal-styling
+
+* {
+  font-family: $main-font;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $background-color;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: initial;
+}
+
+.container {
+  height: 100vh;
+  padding: 10px;
+  .header {
+    @include flex(column, initial, initial);
+    @media (min-width: 600px) {
+      @include flex(row, space-between, initial);
+    }
+    .top-wrapper {
+      @include flex(row, space-between, center);
+    }
+    .nav {
+      @include flex(column, initial, center);
+      height: 100%;
+
+      overflow: hidden;
+      @media (min-width: 600px) {
+        flex-direction: row;
+        a {
+          display: initial;
+        }
+      }
+    }
+
+    a {
+      color: $darkblue;
+      padding: 16px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      &:hover {
+        color: $orange;
+        font-weight: bold;
+      }
+    }
+    i {
+      font-size: 40px;
+    }
+    .hamburger {
+      @include flex(column, initial, flex-end);
+      cursor: pointer;
+
+      @media (min-width: 600px) {
+        flex-direction: row;
+
+        a:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+  .heading {
+    @include mobile-headings;
+    @media (min-width: 600px) {
+      @include desktop-headings;
+    }
+  }
+}
+
+.footer {
+  @include flex(row, center, center);
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: $darkblue;
+
+  nav {
+    width: 300px;
+    @include flex(row, space-between, center);
+
+    .current-page {
+      text-decoration: underline;
+    }
+  }
+
+  .footerlink {
+    @include flex(row, center, initial);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  .footerlink:hover {
+    font-weight: bold;
+  }
+}
+
+#current-page {
+  color: $orange;
+  font-weight: bold;
+}
+
+// Patrik Nyfeldt
+
+.container.home {
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-image: url(/background-image-desktop.png);
+  background-position: 50% 10%;
+
+  @media (min-width: 600px) {
+    background-position: 50% 30%;
+  }
+  &.hide-background {
+    background-image: none;
+  }
+  .logo a {
+    color: $orange;
+  }
+  .main.home {
+    .heading.home {
+      margin-left: 20px;
+      @media (min-width: 600px) {
+        margin-left: 40px;
+      }
+    }
+    .section.home {
+      @include flex(column, initial, center);
+      width: 50%;
+    }
+    .small-heading.home {
+      align-self: flex-start;
+      margin: 0 0 12% 10%;
+      color: $darkblue;
+      @media (min-width: 600px) {
+        font-size: 35px;
+        margin-bottom: 7%;
+      }
+    }
+    .article.home {
+      .text-wrapper.home {
+        width: 80%;
+        color: $turqouise;
+        @media (min-width: 600px) {
+          width: 100%;
+          font-size: 18px;
+        }
+        &:first-of-type {
+          margin-top: 20px;
+          margin-bottom: 60px;
+          @media (min-width: 600px) {
+            margin-top: initial;
+            margin-bottom: 40px;
+          }
+          @media (min-width: 800px) {
+            margin-bottom: initial;
+          }
+        }
+      }
+    }
+    .button.home {
+      @include button;
+      margin-right: 10px;
+      text-decoration: none;
+      margin-top: 20%;
+      padding: 5px 20px;
+      @media (min-width: 600px) {
+        margin-right: 25px;
+        margin-top: 5%;
+      }
+    }
+  }
+}
+.footer.home {
+  position: fixed;
+}
+
+// Patrik Nyfeldt
+
+// Patrik Lundberg
+
+.container.contact {
+  overflow-x: hidden;
+  .main.contact {
+    height: 620px;
+
+    .contact-heading-container {
+      width: 100%;
+      height: 70px;
+      @include flex(row, center, center);
+
+      @media (min-width: 600px) {
+        margin-left: 20px;
+        justify-content: flex-start;
+      }
+    }
+
+    .contact-flex-container {
+      width: 100%;
+      height: 540px;
+      @include flex(column, center, center);
+
+      @media (min-width: 600px) {
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 500px;
+      }
+
+      .contact-img-container {
+        img {
+          width: 320px;
+          height: 200px;
+          object-fit: cover;
+
+          @media (min-width: 600px) {
+            width: 300px;
+            height: 400px;
+            margin-right: 20px;
+          }
+        }
+      }
+
+      .contact-container {
+        width: 350px;
+        @include flex(column, center, center);
+
+        @media (min-width: 600px) {
+          width: 400px;
+        }
+
+        @media (min-width: 900px) {
+          width: 600px;
+        }
+
+        .contact-info {
+          width: 100%;
+          @include flex(row, space-around, center);
+          text-align: center;
+          color: $darkblue;
+          font-size: 14px;
+          margin-top: 10px;
+
+          @media (min-width: 600px) {
+            font-size: 16px;
+          }
+        }
+
+        .contact-form-container {
+          width: 100%;
+          @include flex(row, center, center);
+
+          .contact-form {
+            width: 100%;
+            @include flex(row, center, center);
+            flex-wrap: wrap;
+
+            #name {
+              width: 140px;
+              margin: 10px 10px 10px 0;
+              padding: 5px 5px 5px 9px;
+              border: none;
+
+              &::placeholder {
+                color: $darkblue;
+                opacity: 1;
+              }
+
+              @media (min-width: 600px) {
+                width: 160px;
+              }
+
+              @media (min-width: 900px) {
+                width: 200px;
+              }
+            }
+
+            #email {
+              width: 150px;
+              padding: 5px 5px 5px 9px;
+              border: none;
+
+              &::placeholder {
+                color: $darkblue;
+                opacity: 1;
+              }
+
+              @media (min-width: 600px) {
+                width: 170px;
+              }
+
+              @media (min-width: 900px) {
+                width: 210px;
+              }
+            }
+
+            select {
+              width: 300px;
+              margin-bottom: 10px;
+              padding: 5px;
+              color: $darkblue;
+              border: none;
+
+              @media (min-width: 600px) {
+                width: 340px;
+              }
+
+              @media (min-width: 900px) {
+                width: 420px;
+              }
+            }
+
+            #message {
+              width: 300px;
+              height: 150px;
+              margin-bottom: 10px;
+              padding: 5px 5px 125px 9px;
+              border: none;
+
+              &::placeholder {
+                color: $darkblue;
+                opacity: 1;
+              }
+
+              @media (min-width: 600px) {
+                width: 340px;
+              }
+
+              @media (min-width: 900px) {
+                width: 420px;
+              }
+            }
+          }
+        }
+
+        .contact-submit-button {
+          @include button;
+          cursor: pointer;
+          padding: 5px 30px 5px 30px;
+        }
+      }
+    }
+  }
+}
+
+.footer.contact-footer {
+  &.fixed {
+    position: fixed;
+  }
+  @media (min-width: 600px) {
+    position: fixed;
+  }
+}
+
+// Patrik Lundberg
+
+// Micke Roos Wahlbeck
+
+
+.container.about {
+  height: initial;
+}
+#currentpage {
+  color: $orange;
+}
+.main-text-and-pictures.main {
+  @include flex(column, initial, initial);
+  padding: 30px 30px 30px 100px;
+  padding: 15px;
+  &.hide {
+    display: none;
+  }
+  @media (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+    padding: 0;
+  }
+}
+.employee-container {
+  margin-top: 50px;
+  height: 100%;
+  @include flex(row, center, center);
+  @media (min-width: 600px) {
+    width: 100%;
+    justify-content: flex-start;
+    width: 50%;
+  }
+}
+
+.pictures-employees {
+  @include flex(column, center, center);
+  flex-wrap: wrap;
+  max-height: 600px;
+  gap: 25px;
+  width: 400px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.employee {
+  @include flex(column, flex-start, center);
+}
+
+h3 {
+  color: $darkblue;
+}
+
+.företagsroll {
+  color: $turqouise;
+}
+
+.main-text {
+  font-size: 50%;
+  @include flex(column, center, center);
+  max-width: 100%;
+
+  @media (min-width: 600px) {
+    justify-content: flex-start;
+    max-width: 50%;
+  }
+}
+
+.about-text {
+  font-size: 15px;
+  color: $darkblue;
+  padding: 20px;
+}
+
+.footer.about-footer {
+  &.fixed {
+    position: fixed;
+  }
+  @media (min-width: 600px) {
+    position: fixed;
+  }
+  p {
+    color: white;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+// Micke Roos Wahlbeck
+
+// Vidar Rehn
+
+h1 {
+  margin: 50px auto 40px 50px;
+  @include mobile-headings;
+  @media (min-width: 600px) {
+  @include desktop-headings;    
+  }
+}
+
+.testimonials-wrapper {
+  @include flex(row, space-around, center);
+  text-align: center;
+  height: 400px;
+  @media (min-width: 600px) {
+    margin-bottom: 80px;
+  }
+
+  p {
+    color: $turqouise;
+  }
+
+  i {
+    font-size: 30px;
+    color: $darkblue;
+  }
+
+  .pil {
+    flex-basis: 15%;
+
+    button {
+      background-color: transparent;
+      border: none;
+      &:hover {
+        cursor: pointer;
+
+        i:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+
+  .innehåll {
+    flex-basis: 70%;
+    @include flex(column, space-between, initial);
+
+    > * {
+      margin-bottom: 25px;
+    }
+  }
+
+  .stjärnor {
+    @include flex(row, center, center);
+  }
+
+  .citat-text {
+    padding: 15px;
+  }
+
+  .star {
+    margin: auto 10px;
+  }
+}
+
+.testimonials-footer {
+  &.fixed {
+    position: fixed;
+  }
+  @media (min-width: 600px) {
+    position: fixed;
+  }
+}
+
+// Vidar Rehn

@@ -1,0 +1,27 @@
+@mixin mobile-headings {
+  color: $orange;
+  font-size: 50px;
+  font-weight: 400;
+}
+@mixin desktop-headings {
+  color: $orange;
+  font-size: 60px;
+  margin-left: 40px;
+}
+@mixin button {
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  border-radius: 3px;
+  background: $button-color;
+  border: none;
+  color: $darkblue;
+  font-size: 18px;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px inset;
+  }
+}
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

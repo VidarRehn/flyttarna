@@ -126,7 +126,7 @@ body {
     color: $orange;
   }
   .main.home {
-    
+
     .section.home {
       margin-left: 40px;
       @include flex(column, center, flex-start);
@@ -148,9 +148,7 @@ body {
     }
   }
 }
-.footer.home {
-  position: fixed;
-}
+
 
 // Patrik Nyfeldt
 

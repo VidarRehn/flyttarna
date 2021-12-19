@@ -234,7 +234,7 @@ body {
   width: 100vw;
   position: relative;
   background-size: cover;
-  background-image: url(/background-image-desktop.png);
+  background-image: url(../background-image-desktop.png);
   background-position: 50% 10%;
 }
 
@@ -252,17 +252,8 @@ body {
   color: #E6873c;
 }
 
-.container.home .main.home .heading.home {
-  margin-left: 20px;
-}
-
-@media (min-width: 600px) {
-  .container.home .main.home .heading.home {
-    margin-left: 40px;
-  }
-}
-
 .container.home .main.home .section.home {
+  margin-left: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,19 +261,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 250px;
 }
 
 .container.home .main.home .small-heading.home {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin: 0 0 12% 10%;
   color: #225675;
 }
 
@@ -290,36 +278,6 @@ body {
   .container.home .main.home .small-heading.home {
     font-size: 35px;
     margin-bottom: 7%;
-  }
-}
-
-.container.home .main.home .article.home .text-wrapper.home {
-  width: 80%;
-  color: #3D8c95;
-}
-
-@media (min-width: 600px) {
-  .container.home .main.home .article.home .text-wrapper.home {
-    width: 100%;
-    font-size: 18px;
-  }
-}
-
-.container.home .main.home .article.home .text-wrapper.home:first-of-type {
-  margin-top: 20px;
-  margin-bottom: 60px;
-}
-
-@media (min-width: 600px) {
-  .container.home .main.home .article.home .text-wrapper.home:first-of-type {
-    margin-top: initial;
-    margin-bottom: 40px;
-  }
-}
-
-@media (min-width: 800px) {
-  .container.home .main.home .article.home .text-wrapper.home:first-of-type {
-    margin-bottom: initial;
   }
 }
 
@@ -331,22 +289,14 @@ body {
   border: none;
   color: #225675;
   font-size: 18px;
-  margin-right: 10px;
   text-decoration: none;
-  margin-top: 20%;
+  margin-top: 40px;
   padding: 5px 20px;
 }
 
 .container.home .main.home .button.home:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px inset;
           box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px inset;
-}
-
-@media (min-width: 600px) {
-  .container.home .main.home .button.home {
-    margin-right: 25px;
-    margin-top: 5%;
-  }
 }
 
 .footer.home {

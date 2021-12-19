@@ -113,7 +113,7 @@ body {
   width: 100vw;
   position: relative;
   background-size: cover;
-  background-image: url(..background-image-desktop.png);
+  background-image: url(../background-image-desktop.png);
   background-position: 50% 10%;
 
   @media (min-width: 600px) {
@@ -126,56 +126,25 @@ body {
     color: $orange;
   }
   .main.home {
-    .heading.home {
-      margin-left: 20px;
-      @media (min-width: 600px) {
-        margin-left: 40px;
-      }
-    }
+    
     .section.home {
-      @include flex(column, initial, center);
-      width: 50%;
+      margin-left: 40px;
+      @include flex(column, center, flex-start);
+      max-width: 250px;
     }
     .small-heading.home {
-      align-self: flex-start;
-      margin: 0 0 12% 10%;
       color: $darkblue;
       @media (min-width: 600px) {
         font-size: 35px;
         margin-bottom: 7%;
       }
     }
-    .article.home {
-      .text-wrapper.home {
-        width: 80%;
-        color: $turqouise;
-        @media (min-width: 600px) {
-          width: 100%;
-          font-size: 18px;
-        }
-        &:first-of-type {
-          margin-top: 20px;
-          margin-bottom: 60px;
-          @media (min-width: 600px) {
-            margin-top: initial;
-            margin-bottom: 40px;
-          }
-          @media (min-width: 800px) {
-            margin-bottom: initial;
-          }
-        }
-      }
-    }
+   
     .button.home {
       @include button;
-      margin-right: 10px;
       text-decoration: none;
-      margin-top: 20%;
+      margin-top: 40px;
       padding: 5px 20px;
-      @media (min-width: 600px) {
-        margin-right: 25px;
-        margin-top: 5%;
-      }
     }
   }
 }

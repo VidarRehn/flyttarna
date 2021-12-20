@@ -15,6 +15,8 @@ hamburgerMenu.addEventListener('click',() => {
     //Home
     if(hamburgerMenu.classList.contains("home")){
         var homeContainer = document.querySelector(".container.home");
+        var homeFooter = document.querySelector(".footer.home");
+        homeFooter.classList.toggle("hide");
         homeContainer.classList.toggle("hide-background");
     }
     //Home
@@ -26,8 +28,10 @@ hamburgerMenu.addEventListener('click',() => {
     //contact
     //About
     else if(hamburgerMenu.classList.contains("about")){
+        var aboutHeader = document.querySelector(".om-oss-heading");
         var aboutFooter = document.querySelector(".footer.about-footer");
-        aboutFooter.classList.toggle("fixed");
+        aboutHeader.classList.toggle("hide");
+        aboutFooter.classList.toggle("hide");
     }
     //About
     //Testimonials

@@ -333,14 +333,26 @@ body {
   color: $orange;
 }
 
+.container.about {
+  height: 100%;
+} 
+
 .main-text-and-pictures {
   @include flex(column, center, center);
-  @media (min-width: 600px) {
+  margin-bottom: 50px;
+  @media (min-width: 750px) {
     flex-direction: row;
+    margin-right: 50px;
   }
 
+  color: $darkblue;
+
   .main-text {
-    padding: 40px
+    padding: 40px;
+
+    @media (min-width: 750px) {
+      padding: 70px;
+    }
   }
 
   .pictures-employees {

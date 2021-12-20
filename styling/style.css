@@ -638,6 +638,10 @@ body {
   color: #E6873c;
 }
 
+.container.about {
+  height: 100%;
+}
+
 .main-text-and-pictures {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -652,19 +656,28 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 50px;
+  color: #225675;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 750px) {
   .main-text-and-pictures {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin-right: 50px;
   }
 }
 
 .main-text-and-pictures .main-text {
   padding: 40px;
+}
+
+@media (min-width: 750px) {
+  .main-text-and-pictures .main-text {
+    padding: 70px;
+  }
 }
 
 .main-text-and-pictures .pictures-employees {

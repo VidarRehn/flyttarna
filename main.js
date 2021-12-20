@@ -8,6 +8,7 @@ var main = document.querySelector(".main");
 hamburgerMenu.addEventListener('click',() => {
     toggleItems.forEach((link) => {
         link.classList.toggle("show");
+        link.classList.toggle("hide");
     })
     hamburgerIcon.classList.toggle("hide");
     main.classList.toggle("hide");
